@@ -6,4 +6,19 @@
     <string name="character_s_last_known_location">Character\'s last known location</string>
     <string name="last_known_location">Last known location:</string>
     <string name="name">Name</string>
+    <string name="the_species_of_the_character">The species of the character:</string>
+    <string name="character_s_species">Character\'s species</string>
+    <string name="the_type_or_subspecies_of_the_character">The type or subspecies of the character:</string>
+    <string name="character_s_type">Character\'s type</string>
+    <string name="status">status</string>
+    <string name="location_s_dimension">Location\'s dimension</string>
+    <string name="the_dimension_in_which_the_location_is_located">The dimension in which the location is located:</string>
+    <string name="location_type">Location type</string>
+    <string name="the_type_of_the_location">The type of the location:</string>
+    <string name="the_air_date_of_the_episode">The air date of the episode:</string>
+    <string name="the_code_of_the_episode">The code of the episode:</string>
+    <string name="episode_code">Episode code</string>
+    <string name="character">character</string>
+    <string name="location">location</string>
+    <string name="episode">episode</string>
 </resources>

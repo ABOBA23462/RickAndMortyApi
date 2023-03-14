@@ -1,4 +1,4 @@
-package com.example.rickandmorty.ui.fragments
+package com.example.rickandmorty.ui.fragments.character
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -17,8 +17,7 @@ class CharacterFragment : Fragment() {
     private var characterAdapter = CharacterAdapter()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = FragmentCharacterBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this)[CharacterViewModel::class.java]
@@ -39,8 +38,8 @@ class CharacterFragment : Fragment() {
     }
 
     private fun setupObserve() {
-        viewModel?.fetchCharacters()?.observe(viewLifecycleOwner){
-        characterAdapter.setList(it.result)
+        viewModel?.fetchCharacters()?.observe(viewLifecycleOwner) {
+            characterAdapter.setList(it.result)
         }
     }
 }

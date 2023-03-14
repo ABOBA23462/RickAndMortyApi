@@ -3,17 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_margin="10dp"
     android:layout_height="150dp"
+    android:layout_margin="5dp"
+    android:background="@drawable/item_rounder"
     android:backgroundTint="@color/dark_gray"
-    android:background="@drawable/item_rounder">
+    tools:ignore="TextSizeCheck">
 
     <ImageView
         android:id="@+id/iv_characters_picture"
         android:layout_width="150dp"
         android:layout_height="match_parent"
-android:src="@drawable/rmlogo"
         android:contentDescription="@string/character_picture"
+        android:src="@drawable/rmlogo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -33,10 +34,20 @@ android:src="@drawable/rmlogo"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_last_loc"
+        android:id="@+id/tv_character_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/last_known_location"
+        android:text="@string/status"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/tv_character_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_character_name" />
+
+    <TextView
+        android:id="@+id/tv_species"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/the_species_of_the_character"
         android:textColor="@color/light_grey"
         android:textSize="12sp"
         android:textStyle="bold"
@@ -48,39 +59,64 @@ android:src="@drawable/rmlogo"
         app:layout_constraintVertical_bias="0.252" />
 
     <TextView
-        android:id="@+id/tv_character_last_loc"
+        android:id="@+id/tv_character_species"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/character_s_last_known_location"
+        android:text="@string/character_s_species"
         android:textColor="@color/white"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@id/tv_last_loc"
-        app:layout_constraintTop_toBottomOf="@id/tv_last_loc" />
+        app:layout_constraintStart_toStartOf="@id/tv_species"
+        app:layout_constraintTop_toBottomOf="@id/tv_species" />
 
     <TextView
-        android:id="@+id/tv_first_seen"
+        android:id="@+id/tv_dimension"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/first_seen_in"
+        android:text="@string/the_type_or_subspecies_of_the_character"
         android:textColor="@color/light_grey"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@id/tv_last_loc"
-        app:layout_constraintTop_toBottomOf="@id/tv_character_last_loc"
+        app:layout_constraintStart_toStartOf="@id/tv_species"
+        app:layout_constraintTop_toBottomOf="@id/tv_character_species"
         app:layout_constraintVertical_bias="0.218" />
 
     <TextView
-        android:id="@+id/tv_character_first_seen"
+        android:id="@+id/tv_character_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/character_first_seen"
+        android:text="@string/character_s_type"
         android:textColor="@color/white"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@id/tv_first_seen"
-        app:layout_constraintTop_toBottomOf="@id/tv_first_seen" />
+        app:layout_constraintStart_toStartOf="@id/tv_dimension"
+        app:layout_constraintTop_toBottomOf="@id/tv_dimension" />
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_first_seen"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="@string/first_seen_in"-->
+    <!--        android:textColor="@color/light_grey"-->
+    <!--        android:textSize="12sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/tv_last_loc"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/tv_character_last_loc"-->
+    <!--        app:layout_constraintVertical_bias="0.218" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_character_first_seen"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="@string/character_first_seen"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:textSize="14sp"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/tv_first_seen"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/tv_first_seen" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

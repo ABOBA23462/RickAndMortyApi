@@ -1,6 +1,8 @@
 package com.example.rickandmorty.data.network
 
 import com.example.rickandmorty.data.network.apiservices.CharacterApiService
+import com.example.rickandmorty.data.network.apiservices.EpisodeApiService
+import com.example.rickandmorty.data.network.apiservices.LocationApiService
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -21,5 +23,13 @@ class RetrofitClient {
 
     fun providerCharacterApiService(): CharacterApiService {
         return retrofitClient.create(CharacterApiService::class.java)
+    }
+
+    fun providerLocationApiService(): LocationApiService {
+        return retrofitClient.create(LocationApiService::class.java)
+    }
+
+    fun providerEpisodeApiService(): EpisodeApiService {
+        return retrofitClient.create(EpisodeApiService::class.java)
     }
 }

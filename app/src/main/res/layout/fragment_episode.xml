@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dark_blue"
-    tools:context=".ui.fragments.character.CharacterFragment">
+    tools:context=".ui.fragments.episode.EpisodeFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_characters"
+        android:id="@+id/rv_episode"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="11dp" />

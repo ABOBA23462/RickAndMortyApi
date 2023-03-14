@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_margin="5dp"
+    android:background="@drawable/item_rounder"
+    android:backgroundTint="@color/dark_gray"
+    tools:ignore="TextSizeCheck">
+
+    <TextView
+        android:id="@+id/tv_episode_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/name"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_air_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/the_air_date_of_the_episode"
+        android:textColor="@color/light_grey"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/tv_episode_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_episode_name"
+        app:layout_constraintVertical_bias="0.252" />
+
+    <TextView
+        android:id="@+id/tv_episode_air_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/location_type"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/tv_air_data"
+        app:layout_constraintTop_toBottomOf="@id/tv_air_data" />
+
+    <TextView
+        android:id="@+id/tv_episode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/the_code_of_the_episode"
+        android:textColor="@color/light_grey"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/tv_episode_air_data"
+        app:layout_constraintTop_toBottomOf="@id/tv_episode_air_data"
+        app:layout_constraintVertical_bias="0.218" />
+
+    <TextView
+        android:id="@+id/tv_episode_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/episode_code"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/tv_episode"
+        app:layout_constraintTop_toBottomOf="@id/tv_episode" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

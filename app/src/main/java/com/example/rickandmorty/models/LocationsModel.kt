@@ -2,7 +2,7 @@ package com.example.rickandmorty.models
 
 import com.google.gson.annotations.SerializedName
 
-data class CharacterModel(
+data class LocationsModel(
 
     @SerializedName("id")
     val id: Int,
@@ -10,16 +10,9 @@ data class CharacterModel(
     @SerializedName("name")
     val name: String,
 
-    @SerializedName("status")
-    val status: String,
-
-    @SerializedName("image")
-    val image: String,
-
-    @SerializedName("species")
-    val species: String,
-
     @SerializedName("type")
     val type: String,
 
-    )
+    @SerializedName("dimension")
+    val dimension: String,
+)

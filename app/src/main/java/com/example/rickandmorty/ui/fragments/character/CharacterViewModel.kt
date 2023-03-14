@@ -1,4 +1,4 @@
-package com.example.rickandmorty.ui.fragments
+package com.example.rickandmorty.ui.fragments.character
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -15,6 +15,7 @@ class CharacterViewModel : ViewModel() {
         val data: MutableLiveData<RickAndMortyResponse<CharacterModel>> = MutableLiveData()
         App.characterApiService?.fetchCharacters()
             ?.enqueue(object : Callback<RickAndMortyResponse<CharacterModel>> {
+
                 override fun onResponse(
                     call: Call<RickAndMortyResponse<CharacterModel>>,
                     response: Response<RickAndMortyResponse<CharacterModel>>

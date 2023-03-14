@@ -13,7 +13,7 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
     private var list: List<CharacterModel> = ArrayList()
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setList(list: List<CharacterModel>){
+    fun setList(list: List<CharacterModel>) {
         this.list = list
         notifyDataSetChanged()
     }
@@ -21,11 +21,14 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
     class ViewHolder(private val binding: CharactersItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun onBind(characterModel: CharacterModel) {
-            binding.tvCharacterName.text = characterModel.name
-            Glide.with(binding.ivCharactersPicture.context).load(characterModel.image).into(binding.ivCharactersPicture)
+        fun onBind(characterModel: CharacterModel) = with(binding) {
+            tvCharacterName.text = characterModel.name
+            tvCharacterStatus.text = characterModel.status
+            tvCharacterSpecies.text = characterModel.species
+            tvCharacterType.text = characterModel.type
+            Glide.with(ivCharactersPicture.context).load(characterModel.image)
+                .into(ivCharactersPicture)
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -36,13 +39,12 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
                 ), parent,
                 false
             )
-
         )
     }
 
     override fun getItemCount(): Int = list.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-holder.onBind(list[position])
+        holder.onBind(list[position])
     }
 }
