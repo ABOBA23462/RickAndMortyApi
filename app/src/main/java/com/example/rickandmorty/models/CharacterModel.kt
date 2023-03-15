@@ -18,5 +18,4 @@ data class CharacterModel(
 
     @SerializedName("type")
     val type: String,
-
-    )
+)

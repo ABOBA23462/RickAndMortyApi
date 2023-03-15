@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.rickandmorty.databinding.EpisodesItemBinding
+import com.example.rickandmorty.databinding.ItemEpisodesBinding
 import com.example.rickandmorty.models.EpisodeModel
 
 class EpisodeAdapter : RecyclerView.Adapter<EpisodeAdapter.ViewHolder>() {
@@ -17,7 +17,7 @@ class EpisodeAdapter : RecyclerView.Adapter<EpisodeAdapter.ViewHolder>() {
         notifyDataSetChanged()
     }
 
-    class ViewHolder(private val binding: EpisodesItemBinding) :
+    class ViewHolder(private val binding: ItemEpisodesBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(episodeModel: EpisodeModel) = with(binding) {
@@ -30,7 +30,7 @@ class EpisodeAdapter : RecyclerView.Adapter<EpisodeAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
-            EpisodesItemBinding.inflate(
+            ItemEpisodesBinding.inflate(
                 LayoutInflater.from(
                     parent.context
                 ), parent,

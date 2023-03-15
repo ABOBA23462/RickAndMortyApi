@@ -9,6 +9,9 @@ import com.example.rickandmorty.data.network.apiservices.LocationApiService
 class App : Application() {
 
     companion object {
+
+        val retrofitClient = RetrofitClient()
+
         var characterApiService: CharacterApiService? = null
         var locationApiService: LocationApiService? = null
         var episodeApiService: EpisodeApiService? = null
@@ -16,8 +19,8 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        characterApiService = RetrofitClient().providerCharacterApiService()
-        locationApiService = RetrofitClient().providerLocationApiService()
-        episodeApiService = RetrofitClient().providerEpisodeApiService()
+        characterApiService = retrofitClient.providerCharacterApiService()
+        locationApiService = retrofitClient.providerLocationApiService()
+        episodeApiService = retrofitClient.providerEpisodeApiService()
     }
 }

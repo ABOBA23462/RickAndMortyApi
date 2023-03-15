@@ -11,6 +11,10 @@ import retrofit2.Callback
 
 class CharacterViewModel : ViewModel() {
 
+    init {
+        fetchCharacters()
+    }
+
     fun fetchCharacters(): MutableLiveData<RickAndMortyResponse<CharacterModel>> {
         val data: MutableLiveData<RickAndMortyResponse<CharacterModel>> = MutableLiveData()
         App.characterApiService?.fetchCharacters()

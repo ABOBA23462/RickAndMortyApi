@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.rickandmorty.databinding.CharactersItemBinding
+import com.example.rickandmorty.databinding.ItemCharactersBinding
 import com.example.rickandmorty.models.CharacterModel
 
 class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
@@ -18,7 +18,7 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
         notifyDataSetChanged()
     }
 
-    class ViewHolder(private val binding: CharactersItemBinding) :
+    class ViewHolder(private val binding: ItemCharactersBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(characterModel: CharacterModel) = with(binding) {
@@ -33,7 +33,7 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
-            CharactersItemBinding.inflate(
+            ItemCharactersBinding.inflate(
                 LayoutInflater.from(
                     parent.context
                 ), parent,

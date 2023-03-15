@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.rickandmorty.databinding.LocationsItemBinding
+import com.example.rickandmorty.databinding.ItemLocationsBinding
 import com.example.rickandmorty.models.LocationsModel
 
 class LocationAdapter : RecyclerView.Adapter<LocationAdapter.ViewHolder>() {
@@ -17,7 +17,7 @@ class LocationAdapter : RecyclerView.Adapter<LocationAdapter.ViewHolder>() {
         notifyDataSetChanged()
     }
 
-    class ViewHolder(private val binding: LocationsItemBinding) :
+    class ViewHolder(private val binding: ItemLocationsBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(locationsModel: LocationsModel) = with(binding) {
@@ -30,7 +30,7 @@ class LocationAdapter : RecyclerView.Adapter<LocationAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
-            LocationsItemBinding.inflate(
+            ItemLocationsBinding.inflate(
                 LayoutInflater.from(
                     parent.context
                 ), parent,
