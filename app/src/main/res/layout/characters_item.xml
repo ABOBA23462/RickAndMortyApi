@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="wrap_content"
     android:layout_margin="5dp"
     android:background="@drawable/item_rounder"
     android:backgroundTint="@color/dark_gray"
@@ -12,7 +12,7 @@
     <ImageView
         android:id="@+id/iv_characters_picture"
         android:layout_width="150dp"
-        android:layout_height="match_parent"
+        android:layout_height="150dp"
         android:contentDescription="@string/character_picture"
         android:src="@drawable/rmlogo"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,7 +22,7 @@
 
     <TextView
         android:id="@+id/tv_character_name"
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
@@ -117,6 +117,5 @@
     <!--        android:textSize="14sp"-->
     <!--        app:layout_constraintStart_toStartOf="@id/tv_first_seen"-->
     <!--        app:layout_constraintTop_toBottomOf="@id/tv_first_seen" />-->
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

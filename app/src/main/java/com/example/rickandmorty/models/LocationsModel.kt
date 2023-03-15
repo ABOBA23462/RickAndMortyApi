@@ -4,9 +4,6 @@ import com.google.gson.annotations.SerializedName
 
 data class LocationsModel(
 
-    @SerializedName("id")
-    val id: Int,
-
     @SerializedName("name")
     val name: String,
 
@@ -15,4 +12,7 @@ data class LocationsModel(
 
     @SerializedName("dimension")
     val dimension: String,
+
+    @SerializedName("created")
+    val created: String
 )

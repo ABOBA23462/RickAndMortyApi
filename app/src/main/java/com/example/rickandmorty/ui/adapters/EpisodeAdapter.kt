@@ -24,6 +24,7 @@ class EpisodeAdapter : RecyclerView.Adapter<EpisodeAdapter.ViewHolder>() {
             tvEpisodeName.text = episodeModel.name
             tvEpisodeAirData.text = episodeModel.air_date
             tvEpisodeCode.text = episodeModel.episode
+            tvEpisodeCreated.text = episodeModel.created
         }
     }
 

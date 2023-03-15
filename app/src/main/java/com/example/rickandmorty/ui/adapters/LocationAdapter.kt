@@ -24,6 +24,7 @@ class LocationAdapter : RecyclerView.Adapter<LocationAdapter.ViewHolder>() {
             tvLocationName.text = locationsModel.name
             tvLocationType.text = locationsModel.type
             tvLocationDimension.text = locationsModel.dimension
+            tvLocationCreated.text = locationsModel.created
         }
     }
 
