@@ -9,4 +9,7 @@ interface CharacterApiService {
 
     @GET("api/character")
     fun fetchCharacters(): Call<RickAndMortyResponse<CharacterModel>>
+
+    @GET("api/character/{id}")
+    fun fetchCharactersDetail(): Call<RickAndMortyResponse<CharacterModel>>
 }

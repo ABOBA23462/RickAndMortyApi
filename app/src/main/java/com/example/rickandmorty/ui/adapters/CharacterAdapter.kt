@@ -8,7 +8,8 @@ import com.bumptech.glide.Glide
 import com.example.rickandmorty.databinding.ItemCharactersBinding
 import com.example.rickandmorty.models.CharacterModel
 
-class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
+class CharacterAdapter(val onItemClick: (characterModel: CharacterModel) -> Unit) :
+    RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
 
     private var list: List<CharacterModel> = ArrayList()
 
@@ -18,8 +19,14 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
         notifyDataSetChanged()
     }
 
-    class ViewHolder(private val binding: ItemCharactersBinding) :
+    inner class ViewHolder(private val binding: ItemCharactersBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            itemView.setOnClickListener {
+                onItemClick(list[adapterPosition])
+            }
+        }
 
         fun onBind(characterModel: CharacterModel) = with(binding) {
             tvCharacterName.text = characterModel.name
