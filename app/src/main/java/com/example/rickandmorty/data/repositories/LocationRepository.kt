@@ -31,4 +31,26 @@ class LocationRepository {
             })
         return data
     }
+
+    fun fetchDetailLocation(id: Int): MutableLiveData<RickAndMortyResponse<LocationsModel>> {
+        val data: MutableLiveData<RickAndMortyResponse<LocationsModel>> = MutableLiveData()
+        App.locationApiService?.fetchDetailLocation()
+            ?.enqueue(object : Callback<RickAndMortyResponse<LocationsModel>> {
+
+                override fun onResponse(
+                    call: Call<RickAndMortyResponse<LocationsModel>>,
+                    response: Response<RickAndMortyResponse<LocationsModel>>
+                ) {
+                    data.value = response.body()
+                }
+
+                override fun onFailure(
+                    call: Call<RickAndMortyResponse<LocationsModel>>,
+                    t: Throwable
+                ) {
+                    data.value = null
+                }
+            })
+        return data
+    }
 }

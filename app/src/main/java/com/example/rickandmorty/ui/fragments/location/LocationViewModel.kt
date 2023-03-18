@@ -13,4 +13,7 @@ class LocationViewModel : ViewModel() {
     fun fetchLocation(): MutableLiveData<RickAndMortyResponse<LocationsModel>> {
         return locationRepository.fetchLocation()
     }
+    fun fetchDetailLocation(id: Int): MutableLiveData<RickAndMortyResponse<LocationsModel>> {
+        return locationRepository.fetchDetailLocation(id)
+    }
 }

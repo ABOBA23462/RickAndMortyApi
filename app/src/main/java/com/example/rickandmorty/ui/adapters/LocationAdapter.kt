@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.rickandmorty.databinding.ItemLocationsBinding
 import com.example.rickandmorty.models.LocationsModel
 
-class LocationAdapter : RecyclerView.Adapter<LocationAdapter.ViewHolder>() {
+class LocationAdapter(val onItemClick: (id: Int) -> Unit) : RecyclerView.Adapter<LocationAdapter.ViewHolder>() {
 
     private var list: List<LocationsModel> = ArrayList()
 
@@ -17,8 +17,14 @@ class LocationAdapter : RecyclerView.Adapter<LocationAdapter.ViewHolder>() {
         notifyDataSetChanged()
     }
 
-    class ViewHolder(private val binding: ItemLocationsBinding) :
+  inner  class ViewHolder(private val binding: ItemLocationsBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+      init {
+          itemView.setOnClickListener {
+              onItemClick(list[adapterPosition].id)
+          }
+      }
 
         fun onBind(locationsModel: LocationsModel) = with(binding) {
             tvLocationName.text = locationsModel.name

@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.rickandmorty.databinding.ItemEpisodesBinding
 import com.example.rickandmorty.models.EpisodeModel
 
-class EpisodeAdapter : RecyclerView.Adapter<EpisodeAdapter.ViewHolder>() {
+class EpisodeAdapter(val onItemClick: (id: Int) -> Unit) : RecyclerView.Adapter<EpisodeAdapter.ViewHolder>() {
 
     private var list: List<EpisodeModel> = ArrayList()
 
@@ -17,8 +17,14 @@ class EpisodeAdapter : RecyclerView.Adapter<EpisodeAdapter.ViewHolder>() {
         notifyDataSetChanged()
     }
 
-    class ViewHolder(private val binding: ItemEpisodesBinding) :
+  inner  class ViewHolder(private val binding: ItemEpisodesBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+      init {
+          itemView.setOnClickListener {
+              onItemClick(list[adapterPosition].id)
+          }
+      }
 
         fun onBind(episodeModel: EpisodeModel) = with(binding) {
             tvEpisodeName.text = episodeModel.name

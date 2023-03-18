@@ -13,4 +13,8 @@ class CharacterViewModel : ViewModel() {
     fun fetchCharacters(): MutableLiveData<RickAndMortyResponse<CharacterModel>> {
         return characterRepository.fetchCharacters()
     }
+
+    fun fetchDetailCharacter(id: Int): MutableLiveData<RickAndMortyResponse<CharacterModel>> {
+        return characterRepository.fetchDetailCharacter(id)
+    }
 }

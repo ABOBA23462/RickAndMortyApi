@@ -1,6 +1,7 @@
 package com.example.rickandmorty.ui.fragments.episode
 
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.rickandmorty.R
@@ -13,7 +14,7 @@ class EpisodeFragment :
 
     override val binding by viewBinding(FragmentEpisodeBinding::bind)
     override val viewModel: EpisodeViewModel by viewModels()
-    private var episodeAdapter = EpisodeAdapter()
+    private var episodeAdapter = EpisodeAdapter(this::onItemClick)
 
     override fun initialize() {
         binding.rvEpisode.apply {
@@ -26,5 +27,8 @@ class EpisodeFragment :
         viewModel.fetchEpisode().observe(viewLifecycleOwner) {
             episodeAdapter.setList(it.results)
         }
+    }
+    private fun onItemClick(id: Int){
+        findNavController().navigate(EpisodeFragmentDirections.actionEpisodeFragmentToEpisodeDetailFragment(id))
     }
 }

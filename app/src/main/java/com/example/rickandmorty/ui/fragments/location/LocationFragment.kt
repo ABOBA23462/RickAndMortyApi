@@ -1,6 +1,7 @@
 package com.example.rickandmorty.ui.fragments.location
 
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.rickandmorty.R
@@ -13,7 +14,7 @@ class LocationFragment :
 
     override val binding by viewBinding(FragmentLocationBinding::bind)
     override val viewModel: LocationViewModel by viewModels()
-    private var locationAdapter = LocationAdapter()
+    private var locationAdapter = LocationAdapter(this::onItemClick)
 
     override fun initialize() {
         binding.rvLocation.apply {
@@ -26,5 +27,8 @@ class LocationFragment :
         viewModel.fetchLocation().observe(viewLifecycleOwner) {
             locationAdapter.setList(it.results)
         }
+    }
+    private fun onItemClick(id: Int){
+        findNavController().navigate(LocationFragmentDirections.actionLocationFragmentToLocationDetailFragment(id))
     }
 }

@@ -1,6 +1,7 @@
 package com.example.rickandmorty.ui.fragments.character
 
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.rickandmorty.R
@@ -13,7 +14,7 @@ class CharacterFragment :
 
     override val binding by viewBinding(FragmentCharacterBinding::bind)
     override val viewModel: CharacterViewModel by viewModels()
-    private var characterAdapter = CharacterAdapter()
+    private var characterAdapter = CharacterAdapter(this::onItemClick)
 
     override fun initialize() {
         binding.rvCharacters.apply {
@@ -27,4 +28,8 @@ class CharacterFragment :
             characterAdapter.setList(it.results)
         }
     }
+
+private fun onItemClick(id: Int){
+    findNavController().navigate(CharacterFragmentDirections.actionCharacterFragmentToCharacterDetailFragment(id))
+}
 }

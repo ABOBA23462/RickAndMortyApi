@@ -31,4 +31,26 @@ class EpisodeRepository {
             })
         return data
     }
+
+    fun fetchDetailEpisode(id: Int): MutableLiveData<RickAndMortyResponse<EpisodeModel>> {
+        val data: MutableLiveData<RickAndMortyResponse<EpisodeModel>> = MutableLiveData()
+        App.episodeApiService?.fetchDetailEpisode()
+            ?.enqueue(object : Callback<RickAndMortyResponse<EpisodeModel>> {
+
+                override fun onResponse(
+                    call: Call<RickAndMortyResponse<EpisodeModel>>,
+                    response: Response<RickAndMortyResponse<EpisodeModel>>
+                ) {
+                    data.value = response.body()
+                }
+
+                override fun onFailure(
+                    call: Call<RickAndMortyResponse<EpisodeModel>>,
+                    t: Throwable
+                ) {
+                    data.value = null
+                }
+            })
+        return data
+    }
 }
