@@ -21,6 +21,9 @@ class EpisodeFragment :
             layoutManager = LinearLayoutManager(requireContext())
             adapter = episodeAdapter
         }
+//        binding.btn.setOnClickListener {
+//            binding.rvCharacters.scrollToPosition(characterAdapter.itemCount - 1)
+//        }
     }
 
     override fun setupObserves() {
@@ -28,6 +31,7 @@ class EpisodeFragment :
             episodeAdapter.setList(it.results)
         }
     }
+
     private fun onItemClick(id: Int){
         findNavController().navigate(EpisodeFragmentDirections.actionEpisodeFragmentToEpisodeDetailFragment(id))
     }

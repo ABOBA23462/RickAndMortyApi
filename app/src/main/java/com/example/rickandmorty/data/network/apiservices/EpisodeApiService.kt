@@ -12,5 +12,5 @@ interface EpisodeApiService {
     fun fetchEpisode(): Call<RickAndMortyResponse<EpisodeModel>>
 
     @GET("api/episode/{id}")
-    fun fetchDetailEpisode(): Call<RickAndMortyResponse<EpisodeModel>>
+    fun fetchDetailEpisode(): Call<EpisodeModel>
 }

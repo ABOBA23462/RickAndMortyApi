@@ -9,8 +9,7 @@ import com.example.rickandmorty.databinding.ItemCharactersBinding
 import com.example.rickandmorty.models.CharacterModel
 import kotlin.reflect.KFunction1
 
-class CharacterAdapter(val onItemClick: (id: Int) -> Unit) :
-    RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
+class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
 
     private var list: List<CharacterModel> = ArrayList()
 
@@ -20,14 +19,8 @@ class CharacterAdapter(val onItemClick: (id: Int) -> Unit) :
         notifyDataSetChanged()
     }
 
-    inner class ViewHolder(private val binding: ItemCharactersBinding) :
+    class ViewHolder(private val binding: ItemCharactersBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
-        init {
-            itemView.setOnClickListener {
-                onItemClick(list[adapterPosition].id)
-            }
-        }
 
         fun onBind(characterModel: CharacterModel) = with(binding) {
             tvCharacterName.text = characterModel.name

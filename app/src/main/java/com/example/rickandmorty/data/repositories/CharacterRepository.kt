@@ -32,20 +32,20 @@ class CharacterRepository {
         return data
     }
 
-    fun fetchDetailCharacter(id: Int): MutableLiveData<RickAndMortyResponse<CharacterModel>> {
-        val data: MutableLiveData<RickAndMortyResponse<CharacterModel>> = MutableLiveData()
-        App.characterApiService?.fetchDetailCharacter()
-            ?.enqueue(object : Callback<RickAndMortyResponse<CharacterModel>> {
+    fun fetchDetailCharacter(id: Int): MutableLiveData<CharacterModel> {
+        val data: MutableLiveData<CharacterModel> = MutableLiveData()
+        App.characterApiService?.fetchDetailCharacter(id)
+            ?.enqueue(object : Callback<CharacterModel> {
 
                 override fun onResponse(
-                    call: Call<RickAndMortyResponse<CharacterModel>>,
-                    response: Response<RickAndMortyResponse<CharacterModel>>
+                    call: Call<CharacterModel>,
+                    response: Response<CharacterModel>
                 ) {
                     data.value = response.body()
                 }
 
                 override fun onFailure(
-                    call: Call<RickAndMortyResponse<CharacterModel>>,
+                    call: Call<CharacterModel>,
                     t: Throwable
                 ) {
                     data.value = null

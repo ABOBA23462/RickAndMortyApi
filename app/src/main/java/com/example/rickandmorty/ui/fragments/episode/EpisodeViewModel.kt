@@ -14,7 +14,7 @@ class EpisodeViewModel : ViewModel() {
         return episodeRepository.fetchEpisode()
     }
 
-    fun fetchDetailEpisode(id: Int): MutableLiveData<RickAndMortyResponse<EpisodeModel>> {
+    fun fetchDetailEpisode(id: Int): MutableLiveData<EpisodeModel> {
         return episodeRepository.fetchDetailEpisode(id)
     }
 }
